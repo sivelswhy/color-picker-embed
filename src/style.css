@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+a {
+    background: rgb(219, 1, 1);
+    background: linear-gradient(
+      340deg,
+      rgba(219, 1, 1, 1) 0%,
+      rgba(236, 6, 64, 1) 12%,
+      rgba(150, 81, 133, 1) 54%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    text-decoration: none;
+    color: aliceblue;
+    border-radius: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+
+}
+
+
+::selection {
+    background: #1bc9c0; /*WebKit/Blink Browsers*/
+  }
+  ::-moz-selection {
+    background: #1bc9c0; /* Gecko Browsers */
+  }
+  .main {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+  }
+  .copylink {
+    color: white;
+  }
+  #textcopy {
+    color: white;
+    mix-blend-mode: difference;
+  }
+  input {
+    size: 150px;
+    border: red;
+    border-radius: 7px;
+    padding : 3px;
+    box-shadow: 0px 0px 20px 5px #216dd1;
+  }
