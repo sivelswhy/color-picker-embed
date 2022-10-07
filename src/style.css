@@ -39,7 +39,7 @@ body {
     color: white;
   }
   #textcopy {
-    color: white;
+    color: black;
     mix-blend-mode: difference;
   }
   input {

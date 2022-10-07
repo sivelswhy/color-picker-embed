@@ -64,7 +64,7 @@ colorInput.addEventListener("change", (event) => {
   setUrlParam(colorHex);
   const copylink = document.getElementById('copylink')
 
-  copylink.innerHTML = `<br><br><a>${window.location}</a>`
+  copylink.innerHTML = `<a>${window.location}</a>`
 
 
 });
