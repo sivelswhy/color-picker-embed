@@ -21,6 +21,8 @@ a {
 body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     background-color: rgb(24, 250, 99);
+    overflow-wrap: break-word;
+
 }
 
 
