@@ -3,14 +3,25 @@
 
 // const iziToast = require('izitoast')
 
-function test() {
-  var meta = document.createElement("meta");
-  meta.httpEquiv = "X-UA-Compatible";
-  meta.content = "IE=edgeeeeeeeee";
-  document.getElementsByTagName("head")[0].appendChild(meta);
-}
-test();
+function metaTagsColors(color) {
 
+
+  function title(){
+    // const meta = document.createElement('meta');
+    // meta.name = `title`;
+    // meta.content = `Hex color vizualiser`;
+    // document.getElementsByTagName('head')[0].appendChild(meta);
+
+    // const fbTitle = document.createElement('meta')
+    // fbTitle.property = "og:url" //doesn't work
+    // fbTitle.content = "https://color-picker-embed.vercel.app/"
+    // document.getElementsByTagName('head')[0].appendChild(fbTitle);
+    // <meta property="og:url" content="https://metatags.io/"></meta>
+  }
+
+title()
+}
+metaTagsColors('#12345')
 function setUrlParam(value) {
   let svalue = value;
 //   svalue = svalue.slice(1, 100);
@@ -25,12 +36,11 @@ function setUrlParam(value) {
 function copy() {
     let urlParams = new URLSearchParams(window.location.search);
     let str = document.getElementById('copylink')
-    console.log(str)
     window.getSelection().selectAllChildren(str)
     navigator.clipboard.writeText(str.innerText).then(function() {
-      alert(`J'ai bien copié le texte suivant :\n\n${str.innerText}`)
+      alert(`I've successfully copied this URL :\n\n${str.innerText}`)
     }, function(err) {
-      alert(`Bip Bioup :  Je n'ai pas pu copier le texte et j'ai reçu l'erreur suivante :\n\n${err}`)
+      alert(`Bip Bioup :  I couldn't achieve in the task to copy this url. Here's the error that i ran to :\n\n${err}`)
     });
 }
     
@@ -64,6 +74,10 @@ colorInput.addEventListener("change", (event) => {
   setUrlParam(colorHex);
   const copylink = document.getElementById('copylink')
 
+  const textcopy = document.getElementById('textcopy')
+  
+  textcopy.innerHTML = "<i class=\"fa-solid fa-arrow-down\"></i> Here's the link that let's you transfer this color : <i class=\"fa-sharp fa-solid fa-arrow-down\"></i>"
+  
   copylink.innerHTML = `<a>${window.location}</a>`
 
 
@@ -72,13 +86,19 @@ colorInput.addEventListener("change", (event) => {
 window.onload = function () {
   let urlParams = new URLSearchParams(window.location.search);
   let color = decodeURIComponent(urlParams.get("color"));
-  if (color) {
-    document.body.style.backgroundColor = color;
-    document.getElementById('colorInput').defaultValue = color
+  document.body.style.backgroundColor = color;
+  document.getElementById('colorInput').defaultValue = color
+
+  if (urlParams.get('color') !== null) {
     const copylink = document.getElementById('copylink')
 
-    copylink.innerHTML = `<br><br><a onclick="">${window.location}</a>`
-  } else return;
+    copylink.innerHTML = `<a>${window.location}</a>`
+
+  } else if (!urlParams.get('color')){
+    const textcopy = document.getElementById('textcopy')
+    textcopy.innerHTML = ""
+    copylink.innerHTML = ""
+  };
 };
 
 

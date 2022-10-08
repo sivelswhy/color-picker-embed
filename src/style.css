@@ -20,15 +20,15 @@ a {
 
 body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
-
+    background-color: rgb(24, 250, 99);
 }
 
 
 ::selection {
-    background: #1bc9c0; /*WebKit/Blink Browsers*/
+    background: #1bc9c0; 
   }
   ::-moz-selection {
-    background: #1bc9c0; /* Gecko Browsers */
+    background: #1bc9c0; 
   }
   .main {
     position: absolute;
@@ -38,8 +38,8 @@ body {
   .copylink {
     color: white;
   }
-  #textcopy {
-    color: black;
+  .textcopy {
+    color: white;
     mix-blend-mode: difference;
   }
   input {
